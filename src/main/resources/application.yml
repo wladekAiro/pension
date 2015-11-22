@@ -1,0 +1,23 @@
+spring:
+ datasource:
+     driverClassName: com.mysql.jdbc.Driver
+     url: jdbc:mysql://localhost:3306/pensiondb
+     username: root
+     password: toor
+ jpa: # JPA
+    database_platform: org.hibernate.dialect.MySQLDialect
+    openInView: true
+    show-sql: true
+    database: mysql
+    hibernate.ddl-auto: update
+ view:
+    prefix: /WEB-INF/jsp/
+    suffix: .jsp
+error:
+  whitelabel:
+    enabled: true
+
+logging:
+  level:
+    org.springframework.web: ERROR
+    org.hibernate: ERROR
