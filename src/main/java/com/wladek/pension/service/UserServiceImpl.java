@@ -12,6 +12,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 /**
  * @author Keeun Baik
  */
@@ -39,5 +41,10 @@ public class UserServiceImpl implements UserService {
         UserDetailsImpl ud = new UserDetailsImpl(user);
         Authentication authentication = new UsernamePasswordAuthenticationToken(ud, ud.getPassword(), ud.getAuthorities());
         SecurityContextHolder.getContext().setAuthentication(authentication);
+    }
+
+    @Override
+    public List<User> findAll() {
+        return repository.findAll();
     }
 }

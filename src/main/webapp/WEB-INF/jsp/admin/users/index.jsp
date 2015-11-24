@@ -28,7 +28,26 @@
         </div>
     </div><!-- /.box-header -->
     <div class="box-body table-responsive no-padding">
-        <h3>Welcome To Admin Panel</h3>
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                </thead>
+                <c:forEach items="${users}" var="user">
+                    <tbody>
+                    <td>${user.name}</td>
+                    <td>
+                        <a href="#">Show</a>
+                    </td>
+                    <td></td>
+                    </tbody>
+                </c:forEach>
+            </table>
+        </div>
     </div>
 </div>
 <%--end body--%>
