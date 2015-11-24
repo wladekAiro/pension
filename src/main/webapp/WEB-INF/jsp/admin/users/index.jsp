@@ -29,24 +29,33 @@
     </div><!-- /.box-header -->
     <div class="box-body table-responsive no-padding">
         <div class="table-responsive">
-            <table class="table table-striped table-bordered table-hover">
-                <thead>
-                <tr>
-                    <th>Name</th>
-                    <th></th>
-                    <th></th>
-                </tr>
-                </thead>
-                <c:forEach items="${users}" var="user">
-                    <tbody>
-                    <td>${user.name}</td>
-                    <td>
-                        <a href="#">Show</a>
-                    </td>
-                    <td></td>
-                    </tbody>
-                </c:forEach>
-            </table>
+            <c:choose>
+                <c:when test="${empty users}">
+                    <h5>No users available</h5>
+                </c:when>
+                <c:otherwise>
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                        <tr>
+                            <th>User Name</th>
+                            <th>User Email</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <c:forEach items="${users}" var="user">
+                            <tbody>
+                            <td>${user.name}</td>
+                            <td>${user.email}</td>
+                            <td>
+                                <a href="#">Show</a>
+                            </td>
+                            <td></td>
+                            </tbody>
+                        </c:forEach>
+                    </table>
+                </c:otherwise>
+            </c:choose>
         </div>
     </div>
 </div>

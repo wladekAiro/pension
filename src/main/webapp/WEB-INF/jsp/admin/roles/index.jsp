@@ -28,7 +28,33 @@
         </div>
     </div><!-- /.box-header -->
     <div class="box-body table-responsive no-padding">
-        <h3>Welcome To Admin Panel</h3>
+        <div class="table-responsive">
+            <c:choose>
+                <c:when test="${empty roles}">
+                    <h5>No roles Available</h5>
+                </c:when>
+                <c:otherwise>
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <c:forEach items="${roles}" var="role">
+                            <tbody>
+                            <td>${role.name}</td>
+                            <td>
+                                <a href="#">Show</a>
+                            </td>
+                            <td></td>
+                            </tbody>
+                        </c:forEach>
+                    </table>
+                </c:otherwise>
+            </c:choose>
+        </div>
     </div>
 </div>
 <%--end body--%>
