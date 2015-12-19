@@ -299,6 +299,21 @@
             </li>
 
             <li>
+                <a href="/admin/pension/employeeForm"><i class="fa fa-files-o"></i> <span>Add Pensioners</span></a>
+            </li>
+            <li>
+                <a href="/admin/pension/employees"><i class="fa fa-files-o"></i> <span>Employess</span></a>
+            </li>
+
+            <li>
+                <a href="/admin/users"><i class="fa fa-files-o"></i> <span>Manage Funds</span></a>
+            </li>
+
+            <li>
+                <a href="/admin/users"><i class="fa fa-files-o"></i> <span>Manage Investments</span></a>
+            </li>
+
+            <li>
                 <a href="/admin/users"><i class="fa fa-files-o"></i> <span>Users</span></a>
             </li>
 

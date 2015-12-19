@@ -20,7 +20,7 @@ public class TestConfiguration {
         dataSource.setDriver(new Driver());
         dataSource.setUrl("jdbc:mysql://localhost:3306/pensiondb");
         dataSource.setUsername("root");
-        dataSource.setPassword("toor");
+        dataSource.setPassword("teresa");
         return dataSource;
     }
 

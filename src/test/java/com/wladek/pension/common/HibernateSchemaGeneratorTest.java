@@ -36,7 +36,7 @@ public class HibernateSchemaGeneratorTest {
         cfg.setProperty("hibernate.connection.driver_class", Driver.class.getName());
         cfg.setProperty("hibernate.connection.url", "jdbc:mysql://localhost:3306/pensiondb");
         cfg.setProperty("hibernate.connection.username", "root");
-        cfg.setProperty("hibernate.connection.password", "toor");
+        cfg.setProperty("hibernate.connection.password", "teresa");
         cfg.setNamingStrategy(new org.hibernate.cfg.ImprovedNamingStrategy());
     }
 

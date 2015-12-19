@@ -6,6 +6,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
 
 /**
  * Created by wladek on 11/22/15.
@@ -19,7 +20,7 @@ public class Employee extends AbstractModel{
     @Email
     @NotEmpty(message = "Please provide an email address")
     private String email;
-    @NotEmpty(message = "Please provide an id number")
+    @NotNull(message = "Please provide an id number")
     private Long idNumber;
     @ManyToOne
     private Employer employer;
@@ -62,5 +63,9 @@ public class Employee extends AbstractModel{
 
     public void setEmployer(Employer employer) {
         this.employer = employer;
+    }
+
+    public String getFullNames(){
+        return getFirstName()+" "+getSecondName();
     }
 }
