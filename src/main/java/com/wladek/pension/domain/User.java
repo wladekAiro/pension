@@ -22,11 +22,14 @@ package com.wladek.pension.domain;
 
 import com.wladek.pension.domain.enumeration.UserRole;
 import com.wladek.pension.domain.enumeration.UserState;
+import com.wladek.pension.domain.pension.Enquiry;
+import com.wladek.pension.domain.pension.FeedBack;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
 import javax.validation.constraints.Pattern;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -59,6 +62,11 @@ public class User extends AbstractModel{
 
     @Enumerated(EnumType.STRING)
     private UserState userState;
+
+    @OneToMany(mappedBy = "enquirer", fetch = FetchType.LAZY)
+    private List<Enquiry> enquiries;
+    @OneToMany(mappedBy = "sender", fetch = FetchType.LAZY)
+    private List<FeedBack> feedBacks;
 
     @ManyToMany(mappedBy = "users")
     private Set<Role> roles;
@@ -133,5 +141,13 @@ public class User extends AbstractModel{
 
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
+    }
+
+    public List<Enquiry> getEnquiries() {
+        return enquiries;
+    }
+
+    public void setEnquiries(List<Enquiry> enquiries) {
+        this.enquiries = enquiries;
     }
 }

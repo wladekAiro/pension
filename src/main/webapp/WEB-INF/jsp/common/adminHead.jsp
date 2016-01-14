@@ -299,27 +299,25 @@
             </li>
 
             <li>
-                <a href="/admin/pension/employeeForm"><i class="fa fa-files-o"></i> <span>Add Pensioners</span></a>
-            </li>
-            <li>
-                <a href="/admin/pension/employees"><i class="fa fa-files-o"></i> <span>Employess</span></a>
+                <a href="/admin/users"><i class="fa fa-files-o"></i> <span>Manage Users</span></a>
             </li>
 
             <li>
-                <a href="/admin/users"><i class="fa fa-files-o"></i> <span>Manage Funds</span></a>
+                <a href="/admin/roles"><i class="fa fa-files-o"></i> <span>Roles</span></a>
+            </li>
+
+            <li>
+                <a href="/admin/pension/employers"><i class="fa fa-files-o"></i> <span>Manage employers</span></a>
+            </li>
+
+            <li>
+                <a href="#"><i class="fa fa-files-o"></i> <span>Manage Funds</span></a>
             </li>
 
             <li>
                 <a href="/admin/users"><i class="fa fa-files-o"></i> <span>Manage Investments</span></a>
             </li>
 
-            <li>
-                <a href="/admin/users"><i class="fa fa-files-o"></i> <span>Users</span></a>
-            </li>
-
-            <li>
-                <a href="/admin/roles"><i class="fa fa-files-o"></i> <span>Roles</span></a>
-            </li>
         </ul>
     </section>
     <!-- /.sidebar -->

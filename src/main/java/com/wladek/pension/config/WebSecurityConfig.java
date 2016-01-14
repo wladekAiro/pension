@@ -64,7 +64,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .and()
             .rememberMe()
-                .key("yobi")
+                .key("pension")
                 .tokenValiditySeconds(1296000)
                 .userDetailsService(userDetailsService())
                 .and()

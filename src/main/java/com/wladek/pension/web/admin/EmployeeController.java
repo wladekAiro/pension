@@ -2,6 +2,7 @@ package com.wladek.pension.web.admin;
 
 import com.wladek.pension.domain.pension.Employee;
 import com.wladek.pension.service.EmployeeService;
+import com.wladek.pension.service.EmployerService;
 import com.wladek.pension.web.front.support.EmployeeValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,10 +30,13 @@ public class EmployeeController {
 
     @Autowired
     EmployeeService employeeService;
+    @Autowired
+    EmployerService employerService;
 
-    @RequestMapping(value = "/employeeForm", method = RequestMethod.GET)
-    public String signupForm(Model model) {
+    @RequestMapping(value = "/employee/{id}/add", method = RequestMethod.GET)
+    public String addEmployee(@PathVariable("id") Long id , Model model) {
         model.addAttribute("employee", new Employee());
+        model.addAttribute("employer" , employerService.findOne(id));
         model.addAttribute("action" , "CREATE");
         return "/admin/pension/employeeForm";
     }
@@ -49,7 +53,7 @@ public class EmployeeController {
                 return "/admin/pension/employeeForm";
             }
             Employee newEmployee = employeeService.addNewEmployee(employee);
-            return "redirect:/admin/pension/employees";
+            return "redirect:/admin/pension/employer/"+employee.getEmployer().getId();
         }
 
         if (action.equals("EDIT")){
@@ -58,7 +62,7 @@ public class EmployeeController {
                 return "/admin/pension/employeeForm";
             }
             Employee editedEmployee = employeeService.editEmployee(employee);
-            return "redirect:/admin/pension/employee/"+employee.getId();
+            return "redirect:/admin/pension/employer/"+employee.getEmployer().getId();
         }
 
         return path;
@@ -83,6 +87,7 @@ public class EmployeeController {
     public String editEmployee(@PathVariable("id") Long id, Model model){
         Employee employee = employeeService.getOne(id);
         model.addAttribute("employee" , employee);
+        model.addAttribute("employer" , employee.getEmployer());
         model.addAttribute("action" , "EDIT");
         return "/admin/pension/employeeForm";
     }

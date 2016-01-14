@@ -37,6 +37,7 @@
 <script type="text/javascript" src="/resources/js/admin/jquery.tablesorter.js"></script>
 <script type="text/javascript" src="/resources/js/admin/app.min.js"></script>
 <script type="text/javascript" src="/resources/js/admin/application.js"></script>
+<script type="text/javascript" src="/resources/js/admin/datepicker/js/bootstrap-datepicker.js"></script>
 <%--<script>tinymce.init({selector:'textarea'});</script>--%>
 
 

@@ -11,7 +11,7 @@
     <meta name="author" content="">
     <link rel="icon" href="/resources/images/favicon.ico">
 
-    <title>Charity Market</title>
+    <title>PENSION</title>
 
     <!-- Bootstrap core CSS -->
     <link type="text/css" href="/resources/components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">

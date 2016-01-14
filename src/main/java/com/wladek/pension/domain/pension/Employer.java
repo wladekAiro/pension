@@ -13,6 +13,7 @@ import java.util.Set;
 public class Employer extends AbstractModel {
     private String name;
     private String employer_id;
+    private String employerNumber;
 
     @OneToMany(mappedBy = "employer")
     private Set<Employee> employee;
@@ -39,5 +40,13 @@ public class Employer extends AbstractModel {
 
     public void setEmployee(Set<Employee> employee) {
         this.employee = employee;
+    }
+
+    public String getEmployerNumber() {
+        return employerNumber;
+    }
+
+    public void setEmployerNumber(String employerNumber) {
+        this.employerNumber = employerNumber;
     }
 }

@@ -23,13 +23,12 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Autowired
     EmployeeRepository repository;
+    @Autowired
+    EmployerService employerService;
 
     @Override
     public Employee addNewEmployee(Employee employee) {
-       /* employee.setPassword(passwordEncoder.encode(user.getPassword()));
-        user.setUserRole(UserRole.USER);
-        user.setUserState(UserState.ACTIVE);
-        User newUser = repository.save(user);*/
+        employee.setEmployer(employerService.findOne(employee.getEmployerId()));
         Employee newEmployee = repository.save(employee);
         return newEmployee;
     }
