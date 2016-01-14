@@ -315,7 +315,7 @@
             </li>
 
             <li>
-                <a href="/admin/users"><i class="fa fa-files-o"></i> <span>Manage Investments</span></a>
+                <a href="/admin/pension/investment"><i class="fa fa-files-o"></i> <span>Manage Investments</span></a>
             </li>
 
         </ul>

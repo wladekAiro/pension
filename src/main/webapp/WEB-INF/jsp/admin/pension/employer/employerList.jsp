@@ -26,14 +26,14 @@
                 <%--</div>--%>
             <%--</div>--%>
         </div>
-    </div><!-- /.box-header -->
+    </div>
+    <div class="box-body no-padding">
+        <div class="col-sm-3 col-sm-offset-2">
+            <a class="btn btn-default" href="/admin/pension/employerForm">Register new Employer</a>
+        </div>
+    </div>
     <div class="box-body table-responsive no-padding">
         <div class="table-responsive">
-            <div class="row">
-                <div class="col-sm-3 col-sm-offset-2">
-                    <a href="/admin/pension/employerForm" class="btn-default"> Add </a>
-                </div>
-            </div>
                 <c:if test="${message}">
                     <div class="alert alert-success">
                         Deleted ....

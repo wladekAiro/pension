@@ -2,7 +2,6 @@ package com.wladek.pension.domain.pension;
 
 import com.wladek.pension.domain.AbstractModel;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 
 /**
@@ -14,9 +13,7 @@ public class Assets extends AbstractModel {
     private String name;
     private String type;
     private String cost;
-    @Column(name = "expected_return")
     private String expectedAnnualReturn;
-    @Column(name = "return")
     private String actualReturn;
 
     public String getName() {

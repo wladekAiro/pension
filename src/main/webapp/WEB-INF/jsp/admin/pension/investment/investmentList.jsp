@@ -17,7 +17,7 @@
 <%--body--%>
 <div class="box">
     <div class="box-header with-border">
-        <h3 class="box-title">MANAGE EMPLOYEES</h3>
+        <h3 class="box-title">MANAGE INVESTMENTS</h3>
         <div class="box-tools">
             <%--<div class="input-group">--%>
                 <%--<input type="text" name="table_search" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search"/>--%>
@@ -26,48 +26,50 @@
                 <%--</div>--%>
             <%--</div>--%>
         </div>
-    </div><!-- /.box-header -->
+    </div>
+    <div class="box-body no-padding">
+        <div class="col-sm-3 col-sm-offset-2">
+            <a class="btn btn-default" href="/admin/pension/investmentForm">Register new Investment</a>
+        </div>
+    </div>
     <div class="box-body table-responsive no-padding">
         <div class="table-responsive">
-            <div class="row">
-                <div class="col-sm-3">
-                    <a href="/admin/pension/employeeForm" class="btn-default"> Add </a>
-                </div>
-            </div>
                 <c:if test="${message}">
                     <div class="alert alert-success">
                         Deleted ....
                     </div>
                     </c:if>
             <c:choose>
-                <c:when test="${empty employees}">
-                    <h5>No Employees available</h5>
+                <c:when test="${empty investments}">
+                    <h5>No Investments available</h5>
                 </c:when>
                 <c:otherwise>
                     <table class="table table-striped table-bordered table-hover">
                         <thead>
                         <tr>
-                            <th>ID Number</th>
-                            <th>Full Names</th>
-                            <th>Email</th>
+                            <th>NAME</th>
+                            <th>TYPE</th>
+                            <th>EXPECTED ANNUAL RETURN</th>
+                            <th>COST</th>
                             <th></th>
 			                <th></th>
                             <th></th>
                         </tr>
                         </thead>
-                        <c:forEach items="${employees}" var="employee">
+                        <c:forEach items="${investments}" var="investment">
                             <tbody>
-                            <td>${employee.idNumber}</td>
-                            <td>${employee.getFullNames()}</td>
-                            <td>${employee.email}</td>
+                            <td>${investment.name}</td>
+                            <td>${investment.type}</td>
+                            <td>${investment.expectedAnnualReturn}</td>
+                            <td>${investment.cost}</td>
                             <td>
-                                <a href="/admin/pension/employee/${employee.id}">Show</a>
+                                <a href="/admin/pension/investment/${investment.id}">Show</a>
                             </td>
                             <td>
-				                <a href="/admin/pension/employee/${employee.id}/edit">Edit</a>
+				                <a href="/admin/pension/investment/${investment.id}/edit">Edit</a>
 			                </td>
                             <th>
-                                <a href="/admin/pension/employee/${employee.id}/delete">Delete</a>
+                                <a href="/admin/pension/investment/${investment.id}/delete">Delete</a>
                             </th>
                             </tbody>
                         </c:forEach>
