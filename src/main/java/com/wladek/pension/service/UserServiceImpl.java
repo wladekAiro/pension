@@ -30,7 +30,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public User addNewUser(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        user.setUserRole(UserRole.USER);
         user.setUserState(UserState.ACTIVE);
         User newUser = repository.save(user);
         return newUser;

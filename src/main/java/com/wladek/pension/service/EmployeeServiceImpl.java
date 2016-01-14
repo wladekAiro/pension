@@ -1,5 +1,6 @@
 package com.wladek.pension.service;
 
+import com.wladek.pension.domain.User;
 import com.wladek.pension.domain.pension.Employee;
 import com.wladek.pension.domain.enumeration.UserRole;
 import com.wladek.pension.domain.enumeration.UserState;
@@ -25,10 +26,23 @@ public class EmployeeServiceImpl implements EmployeeService {
     EmployeeRepository repository;
     @Autowired
     EmployerService employerService;
+    @Autowired
+    UserService userService;
 
     @Override
     public Employee addNewEmployee(Employee employee) {
         employee.setEmployer(employerService.findOne(employee.getEmployerId()));
+
+        User employeeUser = new User();
+
+        employeeUser.setUserRole(UserRole.EMPLOYEE);
+        employeeUser.setEmail(employee.getEmail());
+        employeeUser.setLoginId(employee.getFirstName());
+        employeeUser.setPassword("pass");
+        employeeUser.setName(employee.getFirstName() + " "+employee.getSecondName());
+
+        userService.addNewUser(employeeUser);
+
         Employee newEmployee = repository.save(employee);
         return newEmployee;
     }

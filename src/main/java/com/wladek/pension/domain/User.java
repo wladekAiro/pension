@@ -150,4 +150,12 @@ public class User extends AbstractModel{
     public void setEnquiries(List<Enquiry> enquiries) {
         this.enquiries = enquiries;
     }
+
+    public List<FeedBack> getFeedBacks() {
+        return feedBacks;
+    }
+
+    public void setFeedBacks(List<FeedBack> feedBacks) {
+        this.feedBacks = feedBacks;
+    }
 }

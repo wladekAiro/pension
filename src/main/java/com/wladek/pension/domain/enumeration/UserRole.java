@@ -5,6 +5,6 @@ package com.wladek.pension.domain.enumeration;
  */
 public enum UserRole {
 
-    ADMIN, USER;
+    ADMIN, USER,EMPLOYEE;
 
 }
