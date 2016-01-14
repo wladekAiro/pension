@@ -299,7 +299,7 @@
             </li>
 
             <li>
-                <a href="/employee/inquiries"><i class="fa fa-files-o"></i> <span>Inquiries</span></a>
+                <a href="/employee/inquiries/my-inquiries"><i class="fa fa-files-o"></i> <span>Inquiries</span></a>
             </li>
         </ul>
     </section>

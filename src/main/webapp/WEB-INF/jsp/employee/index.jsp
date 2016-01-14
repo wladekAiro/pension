@@ -10,7 +10,7 @@
         <jsp:param name="title" value="PENSION"/>
     </jsp:include>
 </head>
-<jsp:include page="/WEB-INF/jsp/common/adminHead.jsp"/>
+<jsp:include page="/WEB-INF/jsp/common/employeeHead.jsp"/>
 
 <!-- Carousel
 ================================================== -->

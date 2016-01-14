@@ -48,7 +48,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         String[] permitAllUrls = new String[]{"/", "/users/signupform",
                 "/users/loginform", "/users/login", "/users/loginfailure",
-                "/users/logout", "/users/signup", "/test/**"};
+                "/users/logout", "/users/signup", "/test/**" , "/url-processor"};
 
         http.formLogin()
                 .loginPage("/users/loginform")
@@ -71,7 +71,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             .authorizeRequests()
                 .antMatchers(permitAllUrls).permitAll()
                 .antMatchers("/admin/**").hasRole(UserRole.ADMIN.name())
-                .anyRequest().hasRole(UserRole.USER.name());
+                .antMatchers("/employee/**").hasRole(UserRole.EMPLOYEE.name())
+                .anyRequest().hasRole(UserRole.ADMIN.name());
 
 
         http.csrf().disable();

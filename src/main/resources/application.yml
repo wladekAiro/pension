@@ -3,7 +3,7 @@ spring:
      driverClassName: com.mysql.jdbc.Driver
      url: jdbc:mysql://localhost:3306/pensiondb
      username: root
-     password: Oracle1*
+     password: toor
  jpa: # JPA
     database_platform: org.hibernate.dialect.MySQLDialect
     openInView: true

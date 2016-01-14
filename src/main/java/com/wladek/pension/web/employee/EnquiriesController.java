@@ -46,4 +46,10 @@ public class EnquiriesController {
         model.addAttribute("enquiry", enquiry);
         return "/employee/enquiry/view";
     }
+
+    @RequestMapping(value = "my-inquiries" , method = RequestMethod.GET)
+    public String myInquiries(Model model){
+        model.addAttribute("enquiries");
+        return "/employee/enquiry/view";
+    }
 }
